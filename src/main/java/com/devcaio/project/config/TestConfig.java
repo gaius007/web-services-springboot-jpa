@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.devcaio.project.entities.Order;
 import com.devcaio.project.entities.User;
+import com.devcaio.project.entities.enums.OrderStatus;
 import com.devcaio.project.repositories.OrderRepository;
 import com.devcaio.project.repositories.UserRepository;
 
@@ -45,26 +46,27 @@ public class TestConfig implements CommandLineRunner {
 		User u17 = new User(null, "Henry Indigo", "henry@gmail.com", "912121212", "123456");
 		User u18 = new User(null, "Emma Violet", "emma@gmail.com", "901010101", "123456");
 		
-		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), u1);
-		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), u2);
-		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), u1); 
-		Order o4 = new Order(null, Instant.parse("2019-08-15T10:15:30Z"), u4);
-		Order o5 = new Order(null, Instant.parse("2019-09-10T18:45:00Z"), u5);
-		Order o6 = new Order(null, Instant.parse("2019-10-05T14:30:15Z"), u6);
-		Order o7 = new Order(null, Instant.parse("2019-11-01T20:50:40Z"), u7);
-		Order o8 = new Order(null, Instant.parse("2019-12-25T08:10:05Z"), u8);
-		Order o9 = new Order(null, Instant.parse("2020-01-01T12:00:00Z"), u9);
-		Order o10 = new Order(null, Instant.parse("2020-02-14T16:20:25Z"), u10);
-		Order o11 = new Order(null, Instant.parse("2020-03-10T09:15:50Z"), u11);
-		Order o12 = new Order(null, Instant.parse("2020-04-22T22:30:10Z"), u12);
-		Order o13 = new Order(null, Instant.parse("2020-05-01T06:45:30Z"), u13);
-		Order o14 = new Order(null, Instant.parse("2020-06-15T13:40:00Z"), u14);
-		Order o15 = new Order(null, Instant.parse("2020-07-04T18:25:15Z"), u15);
-		Order o16 = new Order(null, Instant.parse("2020-08-19T21:55:45Z"), u16);
-		Order o17 = new Order(null, Instant.parse("2020-09-30T07:30:20Z"), u17);
-		Order o18 = new Order(null, Instant.parse("2020-10-12T15:10:00Z"), u18);
-		Order o19 = new Order(null, Instant.parse("2020-11-03T11:25:35Z"), u1);
-		Order o20 = new Order(null, Instant.parse("2020-12-31T23:59:59Z"), u2);
+		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), OrderStatus.PAID, u1);
+		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT, u2);
+		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.SHIPPED, u1);
+		Order o4 = new Order(null, Instant.parse("2019-08-15T10:15:30Z"), OrderStatus.DELIVERED, u4);
+		Order o5 = new Order(null, Instant.parse("2019-09-10T18:45:00Z"), OrderStatus.CANCELED, u5);
+		Order o6 = new Order(null, Instant.parse("2019-10-05T14:30:15Z"), OrderStatus.PAID, u6);
+		Order o7 = new Order(null, Instant.parse("2019-11-01T20:50:40Z"), OrderStatus.WAITING_PAYMENT, u7);
+		Order o8 = new Order(null, Instant.parse("2019-12-25T08:10:05Z"), OrderStatus.SHIPPED, u8);
+		Order o9 = new Order(null, Instant.parse("2020-01-01T12:00:00Z"), OrderStatus.DELIVERED, u9);
+		Order o10 = new Order(null, Instant.parse("2020-02-14T16:20:25Z"), OrderStatus.CANCELED, u10);
+		Order o11 = new Order(null, Instant.parse("2020-03-10T09:15:50Z"), OrderStatus.PAID, u11);
+		Order o12 = new Order(null, Instant.parse("2020-04-22T22:30:10Z"), OrderStatus.WAITING_PAYMENT, u12);
+		Order o13 = new Order(null, Instant.parse("2020-05-01T06:45:30Z"), OrderStatus.SHIPPED, u13);
+		Order o14 = new Order(null, Instant.parse("2020-06-15T13:40:00Z"), OrderStatus.DELIVERED, u14);
+		Order o15 = new Order(null, Instant.parse("2020-07-04T18:25:15Z"), OrderStatus.CANCELED, u15);
+		Order o16 = new Order(null, Instant.parse("2020-08-19T21:55:45Z"), OrderStatus.PAID, u16);
+		Order o17 = new Order(null, Instant.parse("2020-09-30T07:30:20Z"), OrderStatus.WAITING_PAYMENT, u17);
+		Order o18 = new Order(null, Instant.parse("2020-10-12T15:10:00Z"), OrderStatus.SHIPPED, u18);
+		Order o19 = new Order(null, Instant.parse("2020-11-03T11:25:35Z"), OrderStatus.DELIVERED, u1);
+		Order o20 = new Order(null, Instant.parse("2020-12-31T23:59:59Z"), OrderStatus.CANCELED, u2);
+
 
 		
 		
